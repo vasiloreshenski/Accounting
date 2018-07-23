@@ -1,0 +1,49 @@
+﻿<Window x:Class="Accounting.DesktopClient.MasterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Accounting.DesktopClient"
+        xmlns:resource="clr-namespace:Accounting.DesktopClient.Resource"
+        mc:Ignorable="d"
+        Style="{StaticResource ResourceKey=MasterWindow}">
+    <DockPanel x:Name="Container"
+               VerticalAlignment="Stretch"
+               HorizontalAlignment="Stretch"
+               Background="BlanchedAlmond">
+        <StackPanel x:Name="NavigationStackPanel"
+                    Style="{StaticResource ResourceKey=MasterNavigationStackPanel}">
+            <Button x:Name="NavigateToApplicantsButton"
+                    Content="{x:Static resource:Resource.Applicants}"
+                    Style="{StaticResource NavigationButton}"
+                    Click="NavigateToApplicantsButton_Click" />
+            <Button x:Name="NavigateToProvidersButton"
+                    Content="{x:Static resource:Resource.Providers}"
+                    Style="{StaticResource NavigationButton}"
+                    Click="NavigateToProvidersButton_Click" />
+            <Button x:Name="NavigateToApplicationsButton"
+                    Content="{x:Static resource:Resource.Applications}"
+                    Style="{StaticResource NavigationButton}"
+                    Click="NavigateToApplicationsButton_Click" />
+            <Button x:Name="NavigateToRequestsButton"
+                    Content="{x:Static resource:Resource.Requests}"
+                    Style="{StaticResource NavigationButton}"
+                    Click="NavigateToRequestsButton_Click" />
+            <Button x:Name="NavigateToCheckListButton"
+                    Content="{x:Static resource:Resource.Check_List}"
+                    Style="{StaticResource NavigationButton}"
+                    Click="NavigateToCheckListButton_Click" />
+            <Button x:Name="NavigateToContractsButton"
+                    Content="{x:Static resource:Resource.Contracts}"
+                    Style="{StaticResource NavigationButton}"
+                    Click="NavigateToContractsButton_Click" />
+        </StackPanel>
+        <Frame>
+            
+        </Frame>
+        <DockPanel x:Name="Content"
+                   DockPanel.Dock="Right">
+
+        </DockPanel>
+    </DockPanel>
+</Window>

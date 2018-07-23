@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Accounting.DesktopClient.UI.Styles"
+                    xmlns:resource="clr-namespace:Accounting.DesktopClient.Resource">
+
+    <Style x:Key="MasterWindow"
+           TargetType="Window"
+           BasedOn="{StaticResource {x:Type Window}}">
+        <Setter Property="Width"
+                Value="1024" />
+        <Setter Property="Height"
+                Value="800" />
+        <Setter Property="Title"
+                Value="{x:Static resource:Resource.Master_Window_Title}" />
+    </Style>
+
+    <Style x:Key="MasterNavigationStackPanel"
+           TargetType="StackPanel">
+        <Setter Property="Width"
+                Value="130" />
+        <Setter Property="Orientation"
+                Value="Vertical" />
+        <Setter Property="DockPanel.Dock"
+                Value="Left" />
+        <Setter Property="Background"
+                Value="LightBlue" />
+    </Style>
+
+    <Style x:Key="NavigationButton"
+           TargetType="Button"
+           BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin"
+                Value="5" />
+    </Style>
+
+</ResourceDictionary>
