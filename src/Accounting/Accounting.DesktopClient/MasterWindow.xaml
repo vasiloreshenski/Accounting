@@ -9,8 +9,7 @@
         Style="{StaticResource ResourceKey=MasterWindow}">
     <DockPanel x:Name="Container"
                VerticalAlignment="Stretch"
-               HorizontalAlignment="Stretch"
-               Background="BlanchedAlmond">
+               HorizontalAlignment="Stretch">
         <StackPanel x:Name="NavigationStackPanel"
                     Style="{StaticResource ResourceKey=MasterNavigationStackPanel}">
             <Button x:Name="NavigateToApplicantsButton"

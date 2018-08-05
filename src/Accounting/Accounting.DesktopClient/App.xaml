@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Accounting.DesktopClient"
              StartupUri="MasterWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="pack://application:,,,/UI/Styles/MasterWindowStyles.xaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/MasterWindowStyles.xaml" />
+                <ResourceDictionary Source="Styles/CommonStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

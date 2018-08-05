@@ -1,6 +1,6 @@
 ﻿namespace Accounting.DesktopClient.Navigation
 {
-    public interface INavigation
+    internal interface INavigation
     {
         void GoToApplicants();
     }

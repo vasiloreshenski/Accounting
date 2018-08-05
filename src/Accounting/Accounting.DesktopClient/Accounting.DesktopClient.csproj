@@ -54,15 +54,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\Extensions.cs" />
+    <Compile Include="Internal Services\INavigated.cs" />
     <Compile Include="IoC\IoC.cs" />
-    <Compile Include="Navigation\INavigation.cs" />
-    <Compile Include="Navigation\Navigation.cs" />
+    <Compile Include="Internal Services\INavigation.cs" />
+    <Compile Include="Internal Services\Navigation.cs" />
     <Compile Include="Resource\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="UI\Controls\ApplicantsControl.xaml.cs">
+    <Compile Include="Controls\ApplicantsControl.xaml.cs">
       <DependentUpon>ApplicantsControl.xaml</DependentUpon>
     </Compile>
     <Page Include="MasterWindow.xaml">
@@ -77,11 +79,15 @@
       <DependentUpon>MasterWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UI\Controls\ApplicantsControl.xaml">
+    <Page Include="Controls\ApplicantsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Styles\MasterWindowStyles.xaml">
+    <Page Include="Styles\CommonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\MasterWindowStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,6 +126,16 @@
     <PackageReference Include="Unity">
       <Version>5.8.6</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Accounting.Core\Accounting.Core.csproj">
+      <Project>{603DD96B-FF80-4F35-9A53-6E7FBAF18D36}</Project>
+      <Name>Accounting.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accounting.Data\Accounting.Data.csproj">
+      <Project>{737AF301-E855-49CD-A10A-E627C6596AC6}</Project>
+      <Name>Accounting.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
