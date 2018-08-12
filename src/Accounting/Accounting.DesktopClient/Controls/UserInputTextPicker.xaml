@@ -1,0 +1,32 @@
+﻿<Window x:Class="Accounting.DesktopClient.Controls.UserInputTextPicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Accounting.DesktopClient.Controls"
+        xmlns:resource="clr-namespace:Accounting.DesktopClient.Resource"
+        mc:Ignorable="d"
+        Title="UserInputTextPicker"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource ResourceKey=UserInputTextPickerWindowStyle}">
+
+    <DockPanel>
+        <TextBox x:Name="TextBoxUserInput"
+                 DockPanel.Dock="Top"
+                 Height="50" />
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Bottom"
+                    HorizontalAlignment="Right">
+            <Button Name="ButtonOk"
+                    Style="{StaticResource ButtonGeneral}"
+                    Content="{x:Static resource:Resource.OK}"
+                    Click="ButtonOk_Click"
+                    IsDefault="True"/>
+            <Button Name="ButtonCancel"
+                    Style="{StaticResource ButtonGeneral}"
+                    Content="{x:Static resource:Resource.Cancel}"
+                    Click="ButtonCancel_Click"
+                    IsCancel="True"/>
+        </StackPanel>
+    </DockPanel>
+</Window>

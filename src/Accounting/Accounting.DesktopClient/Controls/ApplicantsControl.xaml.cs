@@ -26,7 +26,8 @@
     /// </summary>
     public partial class ApplicantsControl : UserControl, INavigated
     {
-        public readonly AccountingApi api;
+        private readonly AccountingApi api;
+        private readonly ITextPicker textPicker;
 
         public ApplicantsControl()
         {
@@ -35,20 +36,62 @@
             this.InitializeComponent();
         }
 
-        public ApplicantsControl(AccountingApi api) : this()
+        public ApplicantsControl(AccountingApi api, ITextPicker textPicker) : this()
         {
             this.api = api;
+            this.textPicker = textPicker;
         }
 
         public ObservableCollection<Applicant> Applicants { get; }
+        public Applicant Selected { get; set; }
 
-        public async void OnNavigated()
+        public void OnNavigated()
+        {
+            this.RefereshApplicantsFromDatabaseAsync();
+        }
+
+        private async void MenuItemRemoveSelcted_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Selected != null)
+            {
+                await this.api.DeleteApplicantAsync(this.Selected);
+
+                this.Applicants.Remove(this.Selected);
+            }
+        }
+
+        private async void MenuItemEditSelected_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Selected != null && this.textPicker.PickText(this.Selected.Name) is String picked)
+            {
+                this.Selected.Name = picked;
+
+                await this.api.UpdateApplicantAsync(this.Selected);
+
+                this.RefereshApplicantsFromDatabaseAsync();
+            }
+        }
+
+
+        private async Task RefereshApplicantsFromDatabaseAsync()
         {
             this.Applicants.Clear();
 
             var applicants = await this.api.GetApplicantsAsync();
 
             this.Applicants.AddRange(applicants);
+        }
+
+        private async void ButtonNew_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.textPicker.PickText() is String name)
+            {
+                var applicant = new Applicant(0, name);
+
+                await this.api.InsertApplicantAsync(applicant);
+
+                this.RefereshApplicantsFromDatabaseAsync();
+            }
         }
     }
 }

@@ -15,13 +15,36 @@
                    Style="{StaticResource ResourceKey=BigHeading}"
                    DockPanel.Dock="Top" />
 
-        <ListBox ItemsSource="{Binding Applicants}"
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button x:Name="ButtonNew"
+                    Content="{x:Static resource:Resource.New}"
+                    Style="{StaticResource ButtonGeneral}"
+                    Click="ButtonNew_Click" />
+        </StackPanel>
+
+        <ListBox x:Name="ListBoxApplicants"
+                 ItemsSource="{Binding Applicants}"
+                 SelectedItem="{Binding Selected}"
                  DockPanel.Dock="Top">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock  Text="{Binding Name}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="MenuItemEditSelected"
+                              Header="{x:Static resource:Resource.Edit}"
+                              Click="MenuItemEditSelected_Click" />
+                    <MenuItem  x:Name="MenuItemRemoveSelcted"
+                               Header="{x:Static resource:Resource.Delete}"
+                               Click="MenuItemRemoveSelcted_Click" />
+                </ContextMenu>
+            </ListBox.ContextMenu>
         </ListBox>
     </DockPanel>
 </UserControl>

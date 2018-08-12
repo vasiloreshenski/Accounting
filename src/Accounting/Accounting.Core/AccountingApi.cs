@@ -21,5 +21,20 @@
         {
             return this.database.GetApplicantsAsync();
         }
+
+        public Task UpdateApplicantAsync(Applicant applicant)
+        {
+            return this.database.UpdateApplicantAsync(applicant);
+        }
+
+        public Task DeleteApplicantAsync(Applicant applicant)
+        {
+            return this.database.DeleteApplicantAsync(applicant);
+        }
+
+        public Task<Applicant> InsertApplicantAsync(Applicant applicant)
+        {
+            return this.database.InsertApplicantAsync(applicant);
+        }
     }
 }

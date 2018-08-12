@@ -54,8 +54,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\BindingCommand.cs" />
     <Compile Include="Common\Extensions.cs" />
+    <Compile Include="Controls\UserInputTextPicker.xaml.cs">
+      <DependentUpon>UserInputTextPicker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Internal Services\INavigated.cs" />
+    <Compile Include="Controls\ITextPicker.cs" />
     <Compile Include="IoC\IoC.cs" />
     <Compile Include="Internal Services\INavigation.cs" />
     <Compile Include="Internal Services\Navigation.cs" />
@@ -67,6 +72,10 @@
     <Compile Include="Controls\ApplicantsControl.xaml.cs">
       <DependentUpon>ApplicantsControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\UserInputTextPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MasterWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\MasterWindowStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\UserInputTextPickerStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

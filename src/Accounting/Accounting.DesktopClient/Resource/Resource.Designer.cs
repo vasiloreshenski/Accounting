@@ -79,6 +79,15 @@ namespace Accounting.DesktopClient.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Отказ.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Контролен лист.
         /// </summary>
         public static string Check_List {
@@ -97,11 +106,47 @@ namespace Accounting.DesktopClient.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Изтриване.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редактиране.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Счетоводно водене.
         /// </summary>
         public static string Master_Window_Title {
             get {
                 return ResourceManager.GetString("Master_Window_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Нов.
+        /// </summary>
+        public static string New {
+            get {
+                return ResourceManager.GetString("New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
             }
         }
         

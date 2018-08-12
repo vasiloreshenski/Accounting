@@ -19,8 +19,9 @@
             container.RegisterInstance(masterWindow);
             container.RegisterSingleton<INavigation, Navigation>();
             container.RegisterSingleton<IDatabase, Database>();
+            container.RegisterSingleton<ITextPicker, UserInputTextPicker>();
             container.RegisterSingleton<ApplicantsControl>();
-
+            
             return container;
         }
     }

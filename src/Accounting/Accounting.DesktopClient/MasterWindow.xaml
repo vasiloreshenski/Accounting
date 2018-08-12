@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Accounting.DesktopClient"
         xmlns:resource="clr-namespace:Accounting.DesktopClient.Resource"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Style="{StaticResource ResourceKey=MasterWindow}">
     <DockPanel x:Name="Container"
                VerticalAlignment="Stretch"

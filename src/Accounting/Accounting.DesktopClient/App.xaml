@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/MasterWindowStyles.xaml" />
                 <ResourceDictionary Source="Styles/CommonStyles.xaml" />
+                <ResourceDictionary Source="Styles/UserInputTextPickerStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
